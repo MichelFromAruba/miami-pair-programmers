@@ -3,6 +3,10 @@
 ## todo
 
 - Introduction
+  - Youtube: https://www.youtube.com/results?search_query=beautiful_perspectivas
+  - Twitter: https://twitter.com/MichelFromAruba
+  - Linkedin: https://www.linkedin.com/in/aruba/
+  - Instagram: @beautiful_perspectivas
 - What is OpenSearch
 - Setup an OpenSearch development environment
   - setup docker
