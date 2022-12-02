@@ -15,3 +15,13 @@
   - insert data
   - search for data
   - delete data
+
+## development
+
+```shell
+# install dependencies
+$ python -m pip install -r requirements.txt
+
+# run tests
+$ python -m pytest tests
+```
