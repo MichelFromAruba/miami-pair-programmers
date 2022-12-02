@@ -1,1 +1,2 @@
 pytest>=7.2
+opensearch-py>=2.0.1
