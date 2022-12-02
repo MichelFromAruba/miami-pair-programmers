@@ -19,6 +19,8 @@
 ## development
 
 ```shell
+$ docker-compose up
+
 # install dependencies
 $ python -m pip install -r requirements.txt
 

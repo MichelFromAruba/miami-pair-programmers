@@ -48,6 +48,23 @@ def delete_index(index_name):
     print('\nDeleting index:')
     print(response)
 
+
+def add_document(index_name, id, document):
+
+    client = create_client()
+    # Add a document to the index.
+
+    response = client.index(
+        index=index_name,
+        body=document,
+        id=id,
+        refresh=True
+    )
+    print('\nAdding document:')
+    print(response)
+
+    return response
+
 def test_create_connection():
     client = create_client()
 
@@ -67,6 +84,42 @@ def test_create_index():
 
     assert response is not None
 
+
+def test_add_document():
+    index_name = 'python-test-index'
+    document = {
+        'title': 'Moneyball',
+        'director': 'Bennett Miller',
+        'year': '2011'
+    }
+    id = '1'
+    response = add_document(index_name, id, document)
+
+    assert response is not None
+
+
+def test_search_document():
+    client = create_client()
+    index_name = 'python-test-index'
+
+    # Search for the document.
+    q = 'Moneyball'
+    query = {
+        'size': 5,
+        'query': {
+            'multi_match': {
+                'query': q,
+                'fields': ['title']
+            }
+        }
+    }
+
+    response = client.search(
+        body=query,
+        index=index_name
+    )
+    print('\nSearch results:')
+    print(response)
 
 
 
